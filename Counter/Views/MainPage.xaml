@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Counter.MainPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#F5F3EF">
+
+    <ScrollView>
+        
+        <VerticalStackLayout Padding="22,40,22,30" Spacing="24">
+
+            <Label Text="Liczniki"
+                   FontSize="34"
+                   FontAttributes="Bold"
+                   TextColor="#1F1F1F"
+                   HorizontalTextAlignment="Center" />
+
+            <Frame BackgroundColor="White"
+                   BorderColor="#E7E2D8"
+                   CornerRadius="24"
+                   HasShadow="True"
+                   Padding="20">
+
+                <VerticalStackLayout Spacing="14">
+
+                    <Label Text="NOWY LICZNIK"
+                           FontSize="12"
+                           FontAttributes="Bold"
+                           TextColor="#8A8478" />
+
+                    <Frame BackgroundColor="#FAF8F4"
+                           BorderColor="#E3DED3"
+                           CornerRadius="14"
+                           HasShadow="False"
+                           Padding="14,0">
+                        <Entry x:Name="NameEntry"
+                               Placeholder="Nazwa licznika"
+                               TextColor="#1F1F1F"
+                               PlaceholderColor="#A8A29A" />
+                    </Frame>
+
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+
+                        <Frame Grid.Column="0"
+                               BackgroundColor="#FAF8F4"
+                               BorderColor="#E3DED3"
+                               CornerRadius="14"
+                               HasShadow="False"
+                               Padding="14,0">
+                            <Entry x:Name="ValueEntry"
+                                   Placeholder="Start od"
+                                   Keyboard="Numeric"
+                                   TextColor="#1F1F1F"
+                                   PlaceholderColor="#A8A29A" />
+                        </Frame>
+
+                        <Frame Grid.Column="1"
+                               BackgroundColor="#FAF8F4"
+                               BorderColor="#E3DED3"
+                               CornerRadius="14"
+                               HasShadow="False"
+                               Padding="14,0">
+                            <Picker x:Name="ColorPicker"
+                                    Title="Kolor"
+                                    TextColor="#1F1F1F"
+                                    TitleColor="#A8A29A" />
+                        </Frame>
+
+                    </Grid>
+
+                    <Button Text="Dodaj licznik"
+                            Clicked="AddCounterClicked"
+                            BackgroundColor="#1F1F1F"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            CornerRadius="14"
+                            HeightRequest="52" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <VerticalStackLayout x:Name="CountersContainer" Spacing="14" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
